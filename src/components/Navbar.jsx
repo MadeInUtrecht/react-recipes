@@ -10,11 +10,11 @@ const styles = {
     gitHub: ` flex justify-center items-center absolute right-7 top-7`,
 }
 
-const Navbar = (searchQuery, setSearchQuery) => {
+const Navbar = () => {
   return (
     <>
     <div className={styles.navbar}>
-      <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+      <SearchBar />
       <div className={styles.gitHub}>
         <BsGithub size={32} />
       </div>

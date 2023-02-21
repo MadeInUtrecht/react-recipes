@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
+//import { useNavigate } from 'react-router-dom';
 import { AiOutlineSearch } from 'react-icons/ai';
 
 const styles = {
@@ -9,29 +9,29 @@ const styles = {
 };
 
 const SearchBar = () => {
-    const [searchQuery, setSearchQuery] = useState('');
-  const history = useNavigate();
+  //  const [searchQuery, setSearchQuery] = useState('');
+ // const history = useNavigate();
 
-  const handleSearch = (event) => {
-    event.preventDefault();
-    history.push(`/search?query=${searchQuery}`);
-  };
+  //const handleSearch = (event) => {
+   // event.preventDefault();
+   // history.push(`/search?query=${searchQuery}`);
+  //};
 
   return (
     <div className={styles.searchbar}>
           <div className={styles.searchbar__input}>
-            <form onSubmit={handleSearch}>
+            
                 <input
                 type="text"
                 placeholder="Search recipes..."
                 className={styles.searchbar__input}
-                value={searchQuery}
-                onChange={(event) => setSearchQuery(event.target.value)}
+                //value={searchQuery}
+                //onChange={(event) => setSearchQuery(event.target.value)}
                 />
                 <button className={styles.searchbar__button} type="submit">
                     <AiOutlineSearch size={24} />
                 </button>
-            </form>
+            
         </div>
     </div>
   );
