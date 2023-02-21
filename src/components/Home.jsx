@@ -1,12 +1,10 @@
 import React from 'react'
 import { BsGithub } from 'react-icons/bs'
-import { AiOutlineSearch } from 'react-icons/ai'
 import Rectangle from '../images/Rectangle.png'
 import HeroImg from '../images/heroImg.png'
 import { BsArrowRight } from 'react-icons/bs'
 import { useState, useEffect } from 'react'
 import { FaTelegramPlane } from 'react-icons/fa'
-import { GiKnifeFork } from 'react-icons/gi'
 import { FaFacebook } from 'react-icons/fa'
 import { FaInstagram } from 'react-icons/fa'
 import { FaTwitter } from 'react-icons/fa'
@@ -133,7 +131,7 @@ const Home = () => {
             <input type="text" placeholder="Search recipes..." className={styles.searchbar__input} />
           </div>
           <div className={styles.searchbar__button}>
-            <AiOutlineSearch size={24} />
+            <piOutlineSearch size={24} />
           </div>
         </div>
       </div>
@@ -278,16 +276,16 @@ const Home = () => {
           <div className={styles.footerLinksList}>
             <ul>
               <li>
-                <a className={styles.footerMainLinksList} href="#">About Us</a>
+                <p className={styles.footerMainLinksList} href="#">About Us</p>
               </li>
               <li>
-                <a className={styles.footerMainLinksList} href="#">Contact Us</a>
+                <p className={styles.footerMainLinksList} href="#">Contact Us</p>
               </li>
               <li>
-                <a className={styles.footerMainLinksList} href="#">Privacy Policy</a>
+                <p className={styles.footerMainLinksList} href="#">Privacy Policy</p>
               </li>
               <li>
-                <a className={styles.footerMainLinksList} href="#">Terms &amp; Conditions</a>
+                <p className={styles.footerMainLinksList} href="#">Terms &amp; Conditions</p>
               </li>
             </ul>
           </div>
@@ -297,9 +295,9 @@ const Home = () => {
             <h2>Connect with us</h2>
           </div>
           <div className={styles.footerSocialIcons}>
-            <a href="#"><FaFacebook size={28} /></a>
-            <a href="#"><FaInstagram size={28} /></a>
-            <a href="#"><FaTwitter size={28} /></a>
+            <p href="#"><FaFacebook size={28} /></p>
+            <p href="#"><FaInstagram size={28} /></p>
+            <p href="#"><FaTwitter size={28} /></p>
           </div>
         </div>
       </div>
