@@ -1,5 +1,6 @@
 import React from 'react'
 import { BsGithub } from 'react-icons/bs'
+import { AiOutlineSearch } from 'react-icons/ai'
 import Rectangle from '../images/Rectangle.png'
 import HeroImg from '../images/heroImg.png'
 import { BsArrowRight } from 'react-icons/bs'
@@ -131,7 +132,7 @@ const Home = () => {
             <input type="text" placeholder="Search recipes..." className={styles.searchbar__input} />
           </div>
           <div className={styles.searchbar__button}>
-            <piOutlineSearch size={24} />
+            <AiOutlineSearch size={24} />
           </div>
         </div>
       </div>
