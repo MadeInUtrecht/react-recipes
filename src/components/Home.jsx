@@ -1,6 +1,4 @@
 import React from 'react'
-import { BsGithub } from 'react-icons/bs'
-import { AiOutlineSearch } from 'react-icons/ai'
 import Rectangle from '../images/Rectangle.png'
 import HeroImg from '../images/heroImg.png'
 import { BsArrowRight } from 'react-icons/bs'
@@ -9,6 +7,9 @@ import { FaTelegramPlane } from 'react-icons/fa'
 import { FaFacebook } from 'react-icons/fa'
 import { FaInstagram } from 'react-icons/fa'
 import { FaTwitter } from 'react-icons/fa'
+import SearchBar from './SearchBar'
+import { BsGithub } from 'react-icons/bs'
+
 
 
 
@@ -39,7 +40,7 @@ const styles = {
     banner__text: `w-[3/4] h-1/2 flex justify-start px-11 items-center font-black text-[#000] text-[32px] font-[Inter]`,
     banner__button: `w-1/4 h-1/2 flex justify-end items-center px-11 font-bold text-[#000] text-[26px] font-[Inter]`,
     moreContainer: `w-[80%] flex flex-col mx-auto relative mt-5 justify-center items-end mb-5`,
-    more: `font-bold text-[#000] text-[12px] m:text-[22px] lg:text-[26px] xl:text-[26px] font-[Inter]   flex items-center justify-center px-5 cursor-pointer hover:text-[#D99] transition duration-500 ease-in-out ` ,
+    more: `font-bold text-[#000] text-[12px] m:text-[22px] lg:text-[22px] xl:text-[22px] font-[Inter]   flex items-center justify-center px-5 cursor-pointer hover:text-[#D99] transition duration-500 ease-in-out ` ,
     footer: `w-[100%] h-[200px] flex justify-center items-center relative z-0  bg-black mt-10 text-white`,
     footerMain: `w-[100%] h-[200px] flex justify-between items-center bg-black px-11  space-x-7 `,
     text: `h-[200px] flex flex-col justify-center  items-start  text-[#fff] text-[18px] font-[Inter]`,
@@ -55,13 +56,14 @@ const styles = {
     footerSocialTitle: `flex flex-col  items-center  text-[#fff] text-[12px] m:text-[18px] lg:text-[18px] xl:text-[18px] font-[Inter] font-bold text-center `,
     footerSocial: `flex flex-col justify-center items-center `,
     footerSocialIcons: `flex flex-col justify-center items-center space-y-2`,
-    
 
 }
 
 const Home = () => {
 
   const [vegetarianRecipes, setVegetarianRecipes] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');
+
 
   useEffect(() => {
     async function fetchVegetarianRecipes() {
@@ -127,21 +129,12 @@ const Home = () => {
     <div className={styles.container}>
       <img className={styles.logoDiv} src={Rectangle} alt='decoration' />
       <div className={styles.navbar}>
-        <div className={styles.searchbar}>
-          <div className={styles.searchbar__input}>
-            <input type="text" placeholder="Search recipes..." className={styles.searchbar__input} />
-          </div>
-          <div className={styles.searchbar__button}>
-            <AiOutlineSearch size={24} />
-          </div>
-        </div>
-      </div>
+      <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
       <div className={styles.gitHub}>
         <BsGithub size={32} />
       </div>
     </div>
-
-    
+    </div>
 
     <div className={styles.heroContainer}>
       <img src={HeroImg} alt='hero' className={styles.hero} />
@@ -154,9 +147,9 @@ const Home = () => {
         </div>
       </div>
     </div>
-  
+
     <div className={styles.bar}></div>
-  
+
     <div className={styles.CategoryContainer}>
       <div className={styles.categoryTitle}>Healthy Recipes</div>
       <div className="flex flex-wrap justify-between">
