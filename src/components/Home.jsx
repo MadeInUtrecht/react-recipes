@@ -62,7 +62,11 @@ const styles = {
 const Home = () => {
 
   const [vegetarianRecipes, setVegetarianRecipes] = useState([]);
-  const [searchQuery, setSearchQuery] = useState('');
+  const setSearchQuery = useState('');
+
+  const handleSearchSubmit = (searchQuery) => {
+    setSearchQuery(searchQuery);
+  };
 
 
   useEffect(() => {
@@ -129,7 +133,7 @@ const Home = () => {
     <div className={styles.container}>
       <img className={styles.logoDiv} src={Rectangle} alt='decoration' />
       <div className={styles.navbar}>
-      <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+      <SearchBar onSearchSubmit={handleSearchSubmit} />
       <div className={styles.gitHub}>
         <BsGithub size={32} />
       </div>
