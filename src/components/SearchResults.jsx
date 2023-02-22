@@ -19,7 +19,6 @@ function SearchResults({ onSearchSubmit }) {
   const location = useLocation();
   const searchQuery1 = new URLSearchParams(location.search).get('query');
   const setSearchQuery = useState(searchQuery1);
-  // eslint-disable-next-line no-unused-vars
   const handleSearchSubmit = (searchQuery) => {
     setSearchQuery(searchQuery);
   };
