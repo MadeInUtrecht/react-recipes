@@ -16,7 +16,7 @@ const styles = {
 }
 
 const Navbar = ({onSearchSubmit}) => {
-  const setSearchQuery = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
   const handleSearchSubmit = (searchQuery) => {
     setSearchQuery(searchQuery);
   };

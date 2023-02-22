@@ -1,5 +1,4 @@
-import React from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 import Navbar from './Navbar';
 
@@ -13,21 +12,29 @@ const styles = {
   searchbar__input: `px-5 h-10 w-full flex justify-center items-center bg-[#D9D9D9] rounded-full focus:outline-none `,
   searchbar__button: `flex justify-center items-center px-3`,
   gitHub: ` flex justify-center items-center absolute right-7 top-7`,
+  recipeContainer: `w-full h-full grid grid-cols-4 grid-rows-4 gap-4 p-10`,
+  text: `text-2xl font-bold text-black`,
 };
 
-function SearchResults({ onSearchSubmit }) {
-  const location = useLocation();
-  const searchQuery1 = new URLSearchParams(location.search).get('query');
-  const setSearchQuery = useState(searchQuery1);
+function SearchResults({searchQuery}) {
+  const setSearchQuery = useState(searchQuery);
   const handleSearchSubmit = (searchQuery) => {
     setSearchQuery(searchQuery);
   };
+  
+  useEffect(() => {
+    console.log(searchQuery);
+  }, [searchQuery]);
+
 
   return (
     <>
-      <Navbar />
+      <Navbar onSearchSubmit={handleSearchSubmit} />
 
       <div className={styles.recipeContainer}>
+        <div>tetststs</div>
+        <h1 className={styles.text}>test{searchQuery}</h1>
+
       </div>
     </>
   );

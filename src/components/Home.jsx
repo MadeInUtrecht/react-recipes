@@ -7,8 +7,7 @@ import { FaTelegramPlane } from 'react-icons/fa'
 import { FaFacebook } from 'react-icons/fa'
 import { FaInstagram } from 'react-icons/fa'
 import { FaTwitter } from 'react-icons/fa'
-import SearchBar from './SearchBar'
-import { BsGithub } from 'react-icons/bs'
+import Navbar from './Navbar'
 
 
 
@@ -62,7 +61,7 @@ const styles = {
 const Home = () => {
 
   const [vegetarianRecipes, setVegetarianRecipes] = useState([]);
-  const setSearchQuery = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
 
   const handleSearchSubmit = (searchQuery) => {
     setSearchQuery(searchQuery);
@@ -130,15 +129,7 @@ const Home = () => {
 
   return (
     <>
-    <div className={styles.container}>
-      <img className={styles.logoDiv} src={Rectangle} alt='decoration' />
-      <div className={styles.navbar}>
-      <SearchBar onSearchSubmit={handleSearchSubmit} />
-      <div className={styles.gitHub}>
-        <BsGithub size={32} />
-      </div>
-    </div>
-    </div>
+    <Navbar onSearchSubmit={handleSearchSubmit}/>
 
     <div className={styles.heroContainer}>
       <img src={HeroImg} alt='hero' className={styles.hero} />
