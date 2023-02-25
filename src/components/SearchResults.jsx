@@ -4,6 +4,7 @@ import Navbar from './Navbar';
 
 
 
+
 const styles = {
   container: `w-full h-full flex bg-[#FFF] flex-col relative `,
   logoDiv: `flex justify-center items-center bg-transparent z-20 absolute -rotate-20 m:w-[20%] w-[35%] lg:w-[20%] xl:w-[20%] `,
@@ -21,10 +22,18 @@ function SearchResults({searchQuery}) {
   const handleSearchSubmit = (searchQuery) => {
     setSearchQuery(searchQuery);
   };
-  
+  const [currentURL, setCurrentURL] = useState('');
+  const [searchInput, setSearchInput] = useState('');
+
   useEffect(() => {
-    console.log(searchQuery);
-  }, [searchQuery]);
+    setCurrentURL(window.location.href);
+    const cleanedSearchInput = currentURL.indexOf('search/') + 'search/'.length;
+    setSearchInput(currentURL.substring(cleanedSearchInput));
+  }, []);
+
+  useEffect(() => {
+    console.log(searchInput);
+  }, [searchInput]);
 
 
   return (
@@ -33,7 +42,7 @@ function SearchResults({searchQuery}) {
 
       <div className={styles.recipeContainer}>
         <div>tetststs</div>
-        <h1 className={styles.text}>test{searchQuery}</h1>
+        <h1 className={styles.text}>test{searchInput}</h1>
 
       </div>
     </>

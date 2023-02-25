@@ -8,6 +8,7 @@ import { FaFacebook } from 'react-icons/fa'
 import { FaInstagram } from 'react-icons/fa'
 import { FaTwitter } from 'react-icons/fa'
 import Navbar from './Navbar'
+import { useNavigate } from 'react-router-dom'
 
 
 
@@ -63,8 +64,11 @@ const Home = () => {
   const [vegetarianRecipes, setVegetarianRecipes] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
 
+  const history = useNavigate();
+
   const handleSearchSubmit = (searchQuery) => {
     setSearchQuery(searchQuery);
+    history.push(`/search/${searchQuery}`);
   };
 
 
@@ -129,7 +133,7 @@ const Home = () => {
 
   return (
     <>
-    <Navbar onSearchSubmit={handleSearchSubmit}/>
+    <Navbar onSearchSubmit={handleSearchSubmit} searchQuery={searchQuery}/>
 
     <div className={styles.heroContainer}>
       <img src={HeroImg} alt='hero' className={styles.hero} />
