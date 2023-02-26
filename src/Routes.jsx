@@ -1,5 +1,6 @@
 import { Switch, Route } from 'react-router-dom';
 import SearchResults from './SearchResults';
+import RecipePage from './RecipePage';
 import Home from './Home';
 
 function Routes() {
@@ -7,6 +8,7 @@ function Routes() {
     <Switch>
       <Route exact path="/" component={Home} />
       <Route path="/search" component={SearchResults} />
+      <Route path="/recipe/:recipeId" component={RecipePage} />
     </Switch>
   );
 }

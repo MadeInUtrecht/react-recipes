@@ -3,6 +3,7 @@ import { BsGithub } from 'react-icons/bs'
 import SearchBar from './SearchBar'
 import Rectangle from '../images/Rectangle.png'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 
 const styles = {
@@ -24,6 +25,7 @@ const Navbar = ({onSearchSubmit}) => {
 
   return (
     <>
+    <Link to='/'>
     <div className={styles.container}>
       <img className={styles.logoDiv} src={Rectangle} alt='decoration' />
       <div className={styles.navbar}>
@@ -33,6 +35,7 @@ const Navbar = ({onSearchSubmit}) => {
       </div>
     </div>
     </div>
+    </Link>
     </>
   )
 }
