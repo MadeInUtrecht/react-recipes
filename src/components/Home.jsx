@@ -1,5 +1,4 @@
 import React from 'react'
-import Rectangle from '../images/Rectangle.png'
 import HeroImg from '../images/heroImg.png'
 import { BsArrowRight } from 'react-icons/bs'
 import { useState, useEffect } from 'react'

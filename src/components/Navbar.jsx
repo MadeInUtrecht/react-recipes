@@ -16,6 +16,7 @@ const styles = {
 }
 
 const Navbar = ({onSearchSubmit}) => {
+  //eslint-disable-next-line
   const [searchQuery, setSearchQuery] = useState('');
   const handleSearchSubmit = (searchQuery) => {
     setSearchQuery(searchQuery);
