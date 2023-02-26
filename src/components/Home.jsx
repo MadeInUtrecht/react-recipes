@@ -15,7 +15,7 @@ import { useNavigate } from 'react-router-dom'
 
 
 const styles = {
-    container: `w-full h-full flex bg-[#FFF] flex-col relative `,
+    container: `w-full h-full flex bg-gray-100 flex-col relative `,
     logoDiv: `flex justify-center items-center bg-transparent z-20 absolute -rotate-20 m:w-[20%] w-[35%] lg:w-[20%] xl:w-[20%] `,
     navbar: `w-full h-20 flex  items-center px-10 `,
     searchbar: `w-1/2 h-10 flex justify-between items-center bg-[#D9D9D9] mx-auto rounded-full mx-auto absolute left-0 right-0`,
@@ -32,7 +32,7 @@ const styles = {
     categoryCardContainer: ` flex flex-col justify-between items-center mx-auto  `,
     categoryTitle: `font-bold text-[#000] text-[20px] font-[Inter] m:text-[26px] lg:text-[26px] xl:text-[26px]`,
     categoryCard: `w-1/4  flex justify-center items-center relative z-0  mt-5 cursor-pointer`,
-    categoryCardOverlay: `w-full h-1/6 flex justify-center items-center z-10 bg-[#D9D9D9] opacity-75 absolute bottom-0 hover:opacity-80 transition duration-500 ease-in-out `,
+    categoryCardOverlay: `w-full h-1/6 flex justify-center items-center z-10 bg-gradient-to-b from-[#D9D9D9] to-white opacity-75 absolute bottom-0 hover:opacity-80 transition duration-500 ease-in-out `,
     categoryCardOverlayText: `w-4/5 h-1/2 flex justify-start px-2 m:px-5 lg:px-5 xl:px-5 items-center font-bold text-[#000] text-[8px] m:text-[16px] lg:text-[16px] xl:text-[16px] font-[Inter] text-ellipsis overflow-hidden truncate`,
     categoryCardOverlayButton: `w-1/3 m:w-1/5 lg:w-1/5 xl:w-1/5 h-1/2 flex justify-end items-center pr-5  `,
     banner: `w-[100%] h-[300px] flex justify-center items-center relative z-0 mx-auto bg-[#D99] mt-10`,
@@ -63,11 +63,14 @@ const Home = () => {
   const [vegetarianRecipes, setVegetarianRecipes] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
 
-  const history = useNavigate();
+
+  const navigate = useNavigate();
+
+
 
   const handleSearchSubmit = (searchQuery) => {
     setSearchQuery(searchQuery);
-    history.push(`/search/${searchQuery}`);
+    navigate.push(`/search/${searchQuery}`);
   };
 
 
@@ -152,7 +155,7 @@ const Home = () => {
       <div className={styles.categoryTitle}>Healthy Recipes</div>
       <div className="flex flex-wrap justify-between">
         {vegetarianRecipes.map((recipe) => (
-          <div className={styles.categoryCard} key={recipe.idMeal}>
+          <div className={styles.categoryCard} key={recipe.idMeal} onClick={() => navigate(`/recipe/${recipe.strMeal}`)}>
             <img src={recipe.strMealThumb} alt={recipe.strMeal} />
             <div className={styles.categoryCardOverlay}>
               <div className={styles.categoryCardOverlayText}>
@@ -176,7 +179,7 @@ const Home = () => {
       <div className={styles.categoryTitle}>Beef Recipes</div>
       <div className="flex flex-wrap justify-between">
         {beefRecipes.map((recipe) => (
-          <div className={styles.categoryCard} key={recipe.idMeal}>
+          <div className={styles.categoryCard} key={recipe.idMeal} onClick={() => navigate(`/recipe/${recipe.strMeal}`)}>
             <img src={recipe.strMealThumb} alt={recipe.strMeal} />
             <div className={styles.categoryCardOverlay}>
               <div className={styles.categoryCardOverlayText}>
@@ -207,7 +210,7 @@ const Home = () => {
       <div className={styles.categoryTitle}>Seafood Recipes</div>
       <div className="flex flex-wrap justify-between">
         {seafoodRecipes.map((recipe) => (
-          <div className={styles.categoryCard} key={recipe.idMeal}>
+          <div className={styles.categoryCard} key={recipe.idMeal} onClick={() => navigate(`/recipe/${recipe.strMeal}`)}>
             <img src={recipe.strMealThumb} alt={recipe.strMeal} />
             <div className={styles.categoryCardOverlay}>
               <div className={styles.categoryCardOverlayText}>
@@ -231,7 +234,7 @@ const Home = () => {
       <div className={styles.categoryTitle}>Dessert Recipes</div>
       <div className="flex flex-wrap justify-between">
         {dessertRecipes.map((recipe) => (
-          <div className={styles.categoryCard} key={recipe.idMeal}>
+          <div className={styles.categoryCard} key={recipe.idMeal} onClick={() => navigate(`/recipe/${recipe.strMeal}`)}>
             <img src={recipe.strMealThumb} alt={recipe.strMeal} />
             <div className={styles.categoryCardOverlay}>
               <div className={styles.categoryCardOverlayText}>

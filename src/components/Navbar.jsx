@@ -26,9 +26,9 @@ const Navbar = ({onSearchSubmit}) => {
   return (
     <>
     <div className={styles.container}>
-    <Link to='/'>
-      <img className={styles.logoDiv} src={Rectangle} alt='decoration' />
-    </Link>
+      <Link to="/">
+        <img src={Rectangle} alt="logo" className={styles.logoDiv} />
+      </Link>
       <div className={styles.navbar}>
       <SearchBar onSearchSubmit={handleSearchSubmit} />
       <div className={styles.gitHub}>
