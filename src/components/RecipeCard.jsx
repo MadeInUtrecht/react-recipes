@@ -16,7 +16,7 @@ const RecipeCard = ({ recipe }) => {
         <h2 className="text-gray-900 font-bold text-2xl">{strMeal}</h2>
         <p className="text-gray-600 text-sm mt-1">{strCategory}</p>
         <p className="text-gray-700 text-base mt-2">{strInstructions}</p>
-        <div className="flex justify-center items-center mt-4 bg-gradient-to-b from-white to-gray-300 absolute z-20 bottom-0 left-0 h-[50px] w-full transition ease-in 500ms ">
+        <div className="flex justify-center items-center mt-4 bg-gradient-to-b from-white to-gray-300 absolute z-20 bottom-0 left-0 h-[50px] w-full transition ease-in 500ms  ">
             <h5 className='font-bold font-[Inter]'>See Recipe</h5>
         </div>
       </div>
