@@ -13,7 +13,7 @@ const styles = {
   searchbar__input: `px-5 h-10 w-full flex justify-center items-center bg-[#D9D9D9] rounded-full focus:outline-none `,
   searchbar__button: `flex justify-center items-center px-3`,
   gitHub: ` flex justify-center items-center absolute right-7 top-7`,
-  recipeContainer: `w-full h-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4 p-10`,
+  recipeContainer: `w-full flex-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4 p-10`,
   text: `text-2xl font-bold text-black`,
 };
 

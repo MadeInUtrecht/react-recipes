@@ -3,6 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Home from './components/Home';
 import SearchResults from './components/SearchResults';
+import RecipePage from './components/RecipePage';
 
 const App = () => {
   const location = useLocation();
@@ -13,6 +14,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path='/search/:searchQuery' element={<SearchResults searchQuery={searchQuery} />} />
         <Route path="*" element={<h1>404 - Not Found</h1>} />
+        <Route path="/recipe/:recipeId" element={<RecipePage />} />
       </Routes>
   );
 };

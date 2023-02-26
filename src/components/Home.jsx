@@ -25,7 +25,7 @@ const styles = {
     bar: `w-[80%] h-[2px] bg-[#D9D9D9]  mx-auto`,
     heroContainer: `w-[100%] flex flex-col justify-center items-center mx-auto relative mb-5 cursor-pointer`,
     hero: `w-[80%] flex flex-col justify-center items-center relative z-0 mx-auto`,
-    heroOverlay: `w-[80%] h-[20%] flex justify-center items-center z-10 bg-[#D9D9D9] opacity-75 absolute bottom-0 hover:opacity-80 transition duration-500 ease-in-out `,
+    heroOverlay: `w-[80%] h-[20%] flex justify-center items-center z-10 bg-gradient-to-b from-[#D9D9D9] to-white opacity-75 absolute bottom-0 hover:opacity-80 transition duration-500 ease-in-out `,
     heroOverlay__text: `w-3/4 h-1/2 flex justify-start px-5 items-center font-bold text-[#000] text-[12px] font-[Inter] m:text-[26px] truncate overflow-hidden  lg:text-[26px] xl:text-[26px]`,
     heroOverlay__button: `w-1/4  flex justify-end items-center pr-5  `,
     CategoryContainer: `w-[80%] flex flex-col mx-auto relative mt-5 `,
