@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 import Navbar from './Navbar';
+import { useSelector } from 'react-redux';
 
 
 
@@ -22,18 +23,9 @@ function SearchResults({searchQuery}) {
   const handleSearchSubmit = (searchQuery) => {
     setSearchQuery(searchQuery);
   };
-  const [currentURL, setCurrentURL] = useState('');
-  const [searchInput, setSearchInput] = useState('');
 
-  useEffect(() => {
-    setCurrentURL(window.location.href);
-    const cleanedSearchInput = currentURL.indexOf('search/') + 'search/'.length;
-    setSearchInput(currentURL.substring(cleanedSearchInput));
-  }, []);
+  const searchInput = useSelector((state) => state.searchInput);
 
-  useEffect(() => {
-    console.log(searchInput);
-  }, [searchInput]);
 
 
   return (
@@ -42,7 +34,7 @@ function SearchResults({searchQuery}) {
 
       <div className={styles.recipeContainer}>
         <div>tetststs</div>
-        <h1 className={styles.text}>test{searchInput}</h1>
+        <h1 className={styles.text}>{searchInput} Recipes</h1>
 
       </div>
     </>

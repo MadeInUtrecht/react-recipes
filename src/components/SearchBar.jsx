@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AiOutlineSearch } from 'react-icons/ai';
+import { useDispatch } from 'react-redux';
 
 const styles = {
     searchbar: `w-1/2 h-10 flex justify-between items-center bg-[#D9D9D9] mx-auto rounded-full mx-auto absolute left-0 right-0`,
@@ -11,11 +12,13 @@ const styles = {
 const SearchBar = ({onSearchSubmit}) => {
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   
   const handleSubmit = (event) => {
     event.preventDefault();
     const searchQuery = event.target.elements.searchInput.value;
     onSearchSubmit(searchQuery);
+    dispatch({ type: 'SET_SEARCH_INPUT', payload: searchQuery });
     navigate(`/search/${searchQuery}`)
   };
 
